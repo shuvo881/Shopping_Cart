@@ -1,10 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %} Sing In {% endblock %}
+
+{% block welcome %}
+    <div class="card bg-light p-5">
+        <h1 class="text-dark"> Sign Up</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="">
+                {% for item in form %}
+                    {{item.label_tag}} <br> {{item}} <br>
+                    <br>
+                {% endfor %}
+
+            </div>
+
+            <button class="">Submit</button>
+            <br>
+            <a href="{% url 'signup' %}" class=" "> <u>Forgotten password?</u>  </a>
+            <br>
+            <a href="{% url 'signup' %}" class=""> <u>Create an account?</u>  </a>
+        </form>
+    </div>
+
+{% endblock %}
