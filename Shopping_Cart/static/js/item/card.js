@@ -53,7 +53,7 @@ function updatePopover(cart) {
       i = i + 1;
   }
 
-  popStr = popStr + "</div> <a href='/checkout'><button class='btn btn-success' id='clearCart'>Checkout</button></a>  <button class='btn btn-dark' onclick='clearCart()' id='clearCart'>ClearCart</button>"
+  popStr = popStr + "</div> <a href='checkout'><button class='btn btn-success' id='clearCart'>Checkout</button></a>  <button class='btn btn-dark' onclick='clearCart()' id='clearCart'>ClearCart</button>"
   document.getElementById('popcart').setAttribute('data-content', popStr);
   $('#popcart').popover('show');
   document.getElementById("popcart").click();
@@ -62,7 +62,7 @@ function updatePopover(cart) {
 function clearCart() {
   cart = JSON.parse(localStorage.getItem('cart'));
   for (var item in cart) {
-      document.getElementById('div' + item).innerHTML = '<button id="' + item + '" class="btn btn-danger cart">AddtoCard <i class="fa-solid fa-cart-shopping"></i></button>'
+      document.getElementById('div' + item).innerHTML = '<button id="' + item + '" class="btn btn-primary cart">Add To Card <i class="fa-solid fa-cart-shopping"></i></button>'
   }
   localStorage.clear();
   cart = {};

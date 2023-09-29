@@ -3,13 +3,17 @@
 
 {% block title %} {{item.name}} details {% endblock %}
 {%block welcome%}
-<h1> {{item.name}} </h1>
+    <h3>Below more <strong>Details</strong></h3>
+    <h1> {{item.name}} </h1>
+    <a href="#details" class="btn-get-started scrollto">more</a>
+
 {% endblock %}
 
 {% block content %}
+<!-- ======= Portfolio Section ======= -->
+<section id="details" class="details">
  <!-- Item details -->
-
-<div class="container mt-5 ">
+    <div class="container mt-5 ">
     <div class="row">
         <div class="col-md-6">
             <img src="{{item.image.url}}" class="product-image img-fluid">
@@ -21,18 +25,20 @@
             <p class="text-white"><strong>Location: </strong>{{item.location}}</p>
             <p class="text-white"><strong>Seller: </strong>{{item.created_by.username}}</p>
             <p class="text-white"><strong class="text-gray-500">Description: </strong>{{item.description}}</p>
+            <!--
             <span id="divpr{{item.id}}" class="divpr">
               <button id="pr{{item.id}}" class="btn btn-primary cart btn-sm mt-0">
                 Add To Cart <i class="fa-solid fa-cart-shopping"></i>
               </button>
             </span>
+            -->
         </div>
 
 
     </div>
 </div>
     <!-- adding Related items -->
-
+</section>
     <div class="container mt-5 ">
         <h2 class="mb-12 text-center">Related items</h2>
         <div class="row">

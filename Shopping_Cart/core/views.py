@@ -12,3 +12,7 @@ def index(request):
                       'categories': categories,
                       'items': items,
                   })
+
+
+def checkout(request):
+    return HttpResponse('this is checkout page')
