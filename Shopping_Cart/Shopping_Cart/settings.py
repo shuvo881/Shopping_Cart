@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'authentication',
     'core',
+    'item',
 
 ]
 
@@ -122,8 +123,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, STATIC_URL),
+    os.path.join(BASE_DIR, 'static'),
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 
 # Media files (user-uploaded files)
 MEDIA_URL = '/media/'

@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} {{item.name}} details {% endblock %}
+{%block welcome%}
+    <h3>Below more <strong>Details</strong></h3>
+    <h1> {{item.name}} </h1>
+    <a href="#details" class="btn-get-started scrollto">more</a>
+
+{% endblock %}
+
+{% block content %}
+<!-- ======= Portfolio Section ======= -->
+<section id="details" class="details">
+ <!-- Item details -->
+    <div class="container mt-5 ">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{item.image.url}}" class="product-image img-fluid">
+
+        </div>
+        <div class="col-md-6 product-details bg-dark">
+            <h1 class="mb-6 text-white" id="namepr{{item.id}}">{{ item.name }}</h1>
+            <p class="text-white" id="pricepr{{item.id}}"><strong>Price: </strong>{{item.price}}</p>
+            <p class="text-white"><strong>Location: </strong>{{item.location}}</p>
+            <p class="text-white"><strong>Seller: </strong>{{item.created_by.username}}</p>
+            <p class="text-white"><strong class="text-gray-500">Description: </strong>{{item.description}}</p>
+            <!--
+            <span id="divpr{{item.id}}" class="divpr">
+              <button id="pr{{item.id}}" class="btn btn-primary cart btn-sm mt-0">
+                Add To Cart <i class="fa-solid fa-cart-shopping"></i>
+              </button>
+            </span>
+            -->
+        </div>
+
+
+    </div>
+</div>
+    <!-- adding Related items -->
+</section>
+    <div class="container mt-5 ">
+        <h2 class="mb-12 text-center">Related items</h2>
+        <div class="row">
+            <div class="col-md-3">
+
+                {% for item in related_items %}
+                    <div>
+                        <a href="{% url 'details' item.id %} ">
+                            <div>
+                                <img src="{{item.image.url}}" class="rounded-t-xl" alt="No image">
+                            </div>
+
+                            <div class="p-6 bg-body-secondary">
+                                <h2 class="text-2xl">{{item.name}}</h2>
+                                <p class="text-gray-500">Price: {{item.price}} (BDT)</p>
+
+
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}
