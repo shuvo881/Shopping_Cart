@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-xhzt1g0#sq@py&=wnt@j49w+!!4gfxea05hy-xw-%!_@eq#1!v
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://shoppingcart-production-1de4.up.railway.app/', 'https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://shoppingcart-production-1de4.up.railway.app', 'https://*.127.0.0.1']
 
 # Application definition
 
